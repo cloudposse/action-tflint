@@ -52,7 +52,7 @@ echo "::group:: Installing tflint (${tflint_version}) ... https://github.com/ter
     --location "https://github.com/terraform-linters/tflint/releases/download/${tflint_version}/tflint_${os}_${arch}.zip" \
     --output "${TEMP_PATH}/tflint.zip"
 
-  unzip -u "${TEMP_PATH}/tflint.zip" -d "${TEMP_PATH}/temp-tflint"
+  unzip "${TEMP_PATH}/tflint.zip" -d "${TEMP_PATH}/temp-tflint"
   test ! -d "${TFLINT_PATH}" && install -d "${TFLINT_PATH}"
   install "${TEMP_PATH}/temp-tflint/tflint" "${TFLINT_PATH}"
   rm -rf "${TEMP_PATH}/tflint.zip" "${TEMP_PATH}/temp-tflint"
